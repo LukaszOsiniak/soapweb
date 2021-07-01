@@ -1,0 +1,40 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service"
+           elementFormDefault="qualified">
+
+    <xs:element name="getCarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="licensePlateNumber" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="car" type="tns:car"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="car">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="owner" type="xs:string"/>
+            <xs:element name="licensePlateNumber" type="xs:string"/>
+            <xs:element name="yearOfProduction" type="xs:date"/>
+            <xs:element name="fuelType" type="tns:fuelType"/>
+            <xs:element name="idInsured" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="fuelType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Gasoline"/>
+            <xs:enumeration value="Diesel"/>
+            <xs:enumeration value="LPG Autogas"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
