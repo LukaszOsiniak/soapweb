@@ -12,10 +12,10 @@ import java.util.Map;
 @Component
 public class CarsRepository {
 
-    private static final Map<String, Car> cars =  new HashMap<>();
+    private static final Map<String, Car> cars = new HashMap<>();
 
     @PostConstruct
-    public void initData(){
+    public void initData() {
         Car firstCar = new Car();
         firstCar.setName("Hyundai i30");
         firstCar.setOwner("Mateusz");

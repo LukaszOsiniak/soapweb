@@ -16,13 +16,15 @@ public class CarsEndpoint {
     private CarsRepository carsRepository;
 
     @Autowired
-    public CarsEndpoint(CarsRepository carsRepository){this.carsRepository= carsRepository;}
+    public CarsEndpoint(CarsRepository carsRepository) {
+        this.carsRepository = carsRepository;
+    }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCarRequest")
     @ResponsePayload
-    public GetCarResponse getCar(@RequestPayload GetCarRequest request){
+    public GetCarResponse getCar(@RequestPayload GetCarRequest request) {
         GetCarResponse response = new GetCarResponse();
         response.setCar(carsRepository.findCar(request.getLicensePlateNumber()));
-    return response;
+        return response;
     }
 }
