@@ -24,7 +24,7 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="owner" type="xs:string"/>
             <xs:element name="licensePlateNumber" type="xs:string"/>
-            <xs:element name="yearOfProduction" type="xs:date"/>
+            <xs:element name="yearOfProduction" type="xs:string"/>
             <xs:element name="fuelType" type="tns:fuelType"/>
             <xs:element name="idInsured" type="xs:boolean"/>
         </xs:sequence>
